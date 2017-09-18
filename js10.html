@@ -1,0 +1,26 @@
+<script> 
+    function f1(){
+        var name = document.getElementById("t1").value; 
+        var gender = document.getElementsByName("gender"); 
+        var msg= ""; 
+
+        if (gender[0].checked)
+            msg = "Hello Mr." + name;
+        else if (gender[1].checked)
+            msg = "Hello Miss." + name;
+        
+        document.getElementById("span1").innerHTML=msg ; 
+    }
+</script> 
+
+
+
+<h1> Javascript </h1> 
+
+Enter Name : <input type="text" id="t1"> <br> 
+Gender : 
+<input type="radio" name="gender" value="Mr."> Male 
+<input type="radio" name="gender" value="Miss"> Female <br> 
+
+<input type="button" value="Click" onclick="f1()"><br> 
+<span id="span1"></span> 

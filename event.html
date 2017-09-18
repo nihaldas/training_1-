@@ -1,0 +1,35 @@
+<h1>Drag and Drop</h1>
+<style>
+    .leftBox {
+        float: left;
+        width: 250px;
+        height: 250px;
+        border: 1px solid red;
+    }
+    .rightBox {
+        float: left;
+        width: 250px;
+        height: 250px;
+        border: 2px solid green;
+    }
+</style>
+<script>
+    var id = "";
+    allowDrop = function(ev){
+        ev.preventDefault();
+    }
+    dragStart = function (ev) {
+        id = ev.target.id;
+    }
+    drop = function (ev) {
+        ev.target.append(document.getElementById("pic1"));
+    }
+</script>
+<h2><pre>Section1                       Section-2</pre></h2>
+<section id="section1" class="leftBox">
+        <img src="modi.jpg" id="pic1" ondragstart="dragStart(event)" />
+</section>
+
+<section id="section2" class="rightBox" ondragover="allowDrop(event)" ondrop="drop(event)">
+    
+</section> 

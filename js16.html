@@ -1,0 +1,22 @@
+<h2> Canvas </h2> 
+<script>
+    function Rectangle(){
+        var canvas1 =document.getElementById("canvas1");
+        var context = canvas1.getContext('2d') ; 
+        context.fillStyle = 'RED'; 
+        context.fillRect(25,10,150,80);
+    } 
+
+    function Display(){
+        var canvas1 =document.getElementById("canvas1");
+        var context = canvas1.getContext('2d') ; 
+        
+        context.font = "30px arial";
+        context.fillText (name,100,100); 
+    }
+</script> 
+
+<button onclick="Rectangle()"> Rectangle </button> 
+<canvas style="border:2px solid green" id="canvas1"> </canvas> 
+
+

@@ -1,0 +1,93 @@
+<script>
+    var q= 0 ; 
+    var msg="";
+    var ddq = 0;
+    var pc = 0; 
+    function f1(){
+         
+        var item = document.getElementById("item");
+        var msg = item.options[item.selectedIndex].value; 
+        document.getElementById("span1").innerHTML = msg ; 
+    }
+
+    function f2(){
+        //var pc = 0;
+        var item = document.getElementById("item");
+        var msg = item.value;
+        //alert(q);
+        var payment = document.getElementsByName("payment");
+        if (payment[0].checked)
+            pc = 0;
+        else if (payment[1].checked)
+            pc = 0.02 * Number(msg) * q  ; 
+        else 
+            pc = 0.01 * Number(msg) * q ; 
+
+        document.getElementById("span2").innerHTML = pc;
+    } 
+
+    function f3(){
+        //var ddq = ""; 
+        var dd = document.getElementById("ddc");
+        if (dd.checked)
+            ddq = "350"
+        else 
+            ddq = "0";
+
+        document.getElementById("span3").innerHTML ="Rs "+ ddq ; 
+         
+    }
+
+    function f4(q1){
+        q= q1;
+        //alert(q);
+    }
+
+    function f5(){
+        msg = document.getElementById("item").value;
+        var charges =  (Number(msg) * q) + pc + Number(ddq) ; 
+        
+        document.getElementById("span4").innerHTML = "Item selected : "+" MI 4A "+" Quantity : " + q + " , Delivery Charges : "+ Number(ddq) +" , Total Charges = Rs " + charges ; 
+    }
+</script>
+
+
+
+<h1> Product Bill </h1> 
+Item : 
+<select id="item" onchange="f1()"> 
+        <option value="25000">One Plus 3T</option>
+        <option value="75000">Apple Iphone 8</option>
+        <option value="6000">MI 4A</option>
+        <option value="20000">Galaxy S8</option>
+</select>
+
+<br> 
+
+Price : 
+<span id="span1"> </span> <br>
+
+Quantity: 
+<input type="radio" name="quant" value="1" onclick="f4(1)"/> One 
+<input type="radio" name="quant" value="2" onclick="f4(2)"/> Two 
+<input type="radio" name="quant" value="3" onclick="f4(3)"/> Three 
+
+<br>
+
+Payment Mode: 
+<input type="radio" name="payment" value="p1" onclick="f2()"/> Cash
+<input type="radio" name="payment" value="p2" onclick="f2()"/> Card
+<input type="radio" name="payment" value="p3" onclick="f2()"/> Paytm
+
+<br>
+
+Payment Charges : 
+<span id="span2"> </span> <br>
+
+<input type="checkbox" id="ddc" onclick = "f3()"/> Door Delivery Charges <br> 
+<span id="span3"> </span> <br>
+
+<input type="button" value="Submit" onclick = "f5()" > 
+<span id="span4"> </span> 
+
+

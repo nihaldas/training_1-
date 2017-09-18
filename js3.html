@@ -1,0 +1,33 @@
+<script>
+    var a = prompt("Enter number 1 ");
+    var b = prompt("Enter number 2 ");
+    var c = prompt("Enter number 3 "); 
+
+    var tot = Number(a) + Number(b) + Number(c) ; 
+    var avg = tot/ 3 ; 
+    var msg_tot = "Total Marks is " + tot + "\n" ; 
+    var msg_avg = "Average marks is " + avg + "\n" ; 
+
+    alert(msg_tot) ;
+    alert(msg_avg) ; 
+
+    if ( avg <= 100 && avg >90 ) 
+        alert("Grade is Ex")
+    else if (avg <=90 && avg >70) 
+        alert("Grade is A");
+    else if (avg <=70 && avg >50) 
+        alert("Grade is B");
+    else if (avg <=50 && avg >35) 
+        alert("Grade is C");
+    else 
+        alert("Grade is F");
+
+
+    if ( a>=35 && b>=35 && c>=35)
+        result ="PASS";
+    else
+        result ="FAIL";
+    
+    alert("Result : " + result);     
+
+    </script> 

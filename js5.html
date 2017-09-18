@@ -1,0 +1,70 @@
+<script> 
+
+    function SayHello() {
+        alert("Hello World ! "); 
+    }
+
+    function square() {
+        a = prompt("Enter a number ");
+        a = Number(a); 
+        alert("Square of " + a + " is " + a*a);
+    }
+
+    function square_2(temp) {
+        var a = document.getElementById(temp).value;
+        a = Number(a)
+        alert("Square of " + a + " is " + a*a);
+        var span2 = document.getElementById("span2"); 
+        span2.innerHTML ="Square of " + a + " is " + a*a ; 
+    }
+
+    function Display(i) {
+        var name = document.getElementById(i).value ; 
+        alert("Hello " + name);
+
+        var span1 = document.getElementById("span1"); 
+        span1.innerHTML ="Hello" + name ; 
+    }
+
+    function sum_num(temp1,temp2){
+        var a = document.getElementById(temp1).value;
+        //a = Number(a);
+        var b = document.getElementById(temp2).value;
+        //b = Number(b);
+        var span3 =document.getElementById("span3");
+        c = Number(a)+Number(b); 
+        span3.innerHTML = "Sum is " + c;
+    }
+
+</script>
+
+<input type="button" value="Enter a number" onclick=square()>
+<input type="button" value="Greetings" onclick=SayHello()>
+<br>
+
+Enter your name : <input type="text" id="t1">   <br> 
+<input type="button" value="Display" onclick='Display("t1")'>
+
+<span id="span1"></span>
+
+
+
+<br>
+<br>
+Enter a number : <input type="text" id="t2">   <br> 
+<input type="button" value="Display Square" onclick='square_2("t2")'>
+<br>
+<span id="span2"></span>
+
+
+
+Enter  number 1 : <input type="text" id="t3">   <br> 
+<br>
+
+
+Enter  number 2 : <input type="text" id="t4">   <br> 
+<input type="button" value="Add" onclick='sum_num("t3","t4")'>
+<br>
+<span id="span3"></span>
+
+

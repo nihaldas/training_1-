@@ -1,0 +1,26 @@
+<script>
+    var d = new Date();
+    var msg="";
+
+    function Wishes(){
+        if ( d.getHours() < 12)
+            msg = "Good Morning"; 
+        else if ( d.getHours() < 16)
+            msg = "Good Afternoon"; 
+        else if (d.getHours() < 18)
+            msg = "Good Evenig"; 
+        else 
+            msg = "Good Night"
+
+        document.getElementById("span1").innerHTML= msg ;
+            
+    }
+
+    
+    </script>
+
+
+<h1> Wishes </h1> 
+
+<button onclick='Wishes()' > Wish Me </button>
+<span id="span1"></span>  

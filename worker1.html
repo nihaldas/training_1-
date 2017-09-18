@@ -1,0 +1,38 @@
+<script> 
+var w ; 
+function startWorker(){
+    w = new Worker("worker1.js"); 
+    w.onmessage =function(event) {
+        document.getElementById("result").innerHTML = event.data;
+    }
+}
+
+function stopWorker(){
+    w.terminate();
+    w = undefined;
+}
+</script> 
+
+<p> Count Number : <output id="result"></output></p> 
+
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button> 
+
+<form>
+    <input type="button" id="b1" VALUE="click me" ; 
+        onmouseover='this.style.color="RED"'
+        onmouseout='this.style.color = "BLACK"'
+    >
+</form> 
+
+<h1> Listener Example </h1> 
+<input type="button" value="click me" id="b2"/> 
+<span id="span1"> </span> <br> 
+<script> 
+    var b1 = document.getElementById("b2").addEventListener("click",f1);
+
+    function f1(){
+        document.getElementById("span1").innerHTML="button clicked" ; 
+    }
+
+</script> 

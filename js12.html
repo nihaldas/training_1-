@@ -1,0 +1,47 @@
+<script>
+    function f1(){
+        var name =document.getElementById("t1").value; 
+        var terms = document.getElementById("terms"); 
+        if(terms.checked)
+            msg="Thank you" + name + " for accepting the terms and conditions";
+        else 
+            msg = name + " , Please read and accept terms";
+        
+            document.getElementById("span1").innerHTML = msg ; 
+    }
+
+    function f2(){
+        var msg="";
+        var i;
+        var hob = document.getElementsByName("hobbies");
+        
+        for (i=0;i<=5;i++){
+            if (hob[i].checked)
+                msg += hob[i].value + " " ;
+            else ;
+        }
+       
+        document.getElementById("span2").innerHTML = "Your hobbies are " + msg ; 
+
+
+    }
+
+ </script> 
+
+<h1> Javascript with HTML UI </h1> 
+<input type="text" placeholder="Enter your name" id="t1"><br> 
+<input type="checkbox" id="terms" /> Terms and Conditions<br> 
+<button onclick="f1()"> submit </button> <br> 
+<span id="span1"> </span> 
+
+
+<h2> List of Hobbies </h2> 
+<input type="checkbox" name="hobbies" id="hobby1" value="Swimming"/> Swimming <br>
+<input type="checkbox" name="hobbies" id="hobby2" value="Dancing"/> Dancing <br>
+<input type="checkbox" name="hobbies" id="hobby3" value="Painting"/> Painting <br>
+<input type="checkbox" name="hobbies" id="hobby4" value="Singing"/> Singing <br>
+<input type="checkbox" name="hobbies" id="hobby5" value="Fighting"/> Fighting <br> 
+<input type="checkbox" name="hobbies" id="hobby6" value="Sleeping"/> Sleeping <br>
+
+<button onclick="f2()"> submit hobbies </button> <br>
+<span id="span2"> </span> 

@@ -1,0 +1,42 @@
+<script> 
+    var d = new Date() ;
+    var p = d.getDay(); 
+
+    function ShowDate(){
+        var m = d.getDate() +"/" + d.getMonth() +"/" + d.getFullYear();
+        document.getElementById("span1").innerHTML = m; 
+    }
+
+    function ShowTime(){
+        var t = d.getHours() + ":" + d.getMinutes() +":" + d.getSeconds() ; 
+        document.getElementById("span2").innerHTML = t;
+    }
+
+    function Display(x){
+        var d = new Date();
+        var m = "";
+        if ( x == "date") 
+            m = d.getDate() +"/" + d.getMonth() +"/" + d.getFullYear();
+        else if (x == "time")
+            m = d.getHours() + ":" + d.getMinutes() +":" + d.getSeconds() ; 
+        
+        document.getElementById("span1").innerHTML = m;
+    }
+
+    function f1(){
+        var d = new Date() ;
+        var p = d.getDay();
+        if (p == 0 || p== 6)
+            document.getElementById("span1").innerHTML = "Enjoy the weekend";
+        else 
+            document.getElementById("span1").innerHTML = "Enjoy the weekday";
+
+    }
+</script> 
+
+<h1> Client Details </h1> 
+
+<button onclick="Display(this.value)" value="date"> Show Date </button> 
+<button onclick="Display(this.value)" value="time"> Show Time </button> <hr>
+<button onclick="f1()"> Show Day </button> <hr>
+<span id="span1"></span>

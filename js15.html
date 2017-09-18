@@ -1,0 +1,78 @@
+<script>
+
+    function f1(){
+        var msg ='';
+        for (i=1;i<=10 ; i++)
+            msg += " " + i ;
+    
+        document.getElementById("span1").innerHTML = msg ; 
+    }
+
+    function f2(){
+        var msg1 ='';
+        for (j=10 ; j>=1 ; j--)
+            msg1 += " " + j ;
+    
+        document.getElementById("span1").innerHTML = msg1 ; 
+    }
+
+    function f3(){
+        var msg2 ="";
+        for (q=65;q<91;q++)
+            msg2 += " " + String.fromCharCode(q) ; 
+
+        document.getElementById("span1").innerHTML = msg2 ; 
+    }
+
+    function f4(){
+        var msg3=""; 
+        for (p=97;p<123;p++)
+            msg3 += " " + String.fromCharCode(p) ;
+
+        document.getElementById("span1").innerHTML = msg3 ; 
+    }
+
+    function modiin(){
+        document.getElementById("span2").innerHTML="<img src='modi.jpg'></img>"
+
+    }
+    function trumpin(){
+        document.getElementById("span2").innerHTML="<img src='trump.jpg'></img>"
+
+    }
+    function modiout(){
+        document.getElementById("span2").innerHTML=""
+
+    }
+    function trumpout(){
+        document.getElementById("span2").innerHTML=""
+
+    }
+
+</script>
+
+
+
+
+<input type="button" value="Display 1 to 10" onclick='f1()'/>
+<input type="button" value="Display 10 to 1" onclick='f2()'/>
+
+<br>
+
+<span id="span1"></span> 
+
+<br>
+
+
+
+<br>
+
+<input type="button" value="Capital Letters" onclick='f3()'/>
+<input type="button" value="Small Letters" onclick='f4()'/> 
+
+<br><br>
+
+<div><p id="m" onmouseover="modiin()" onmouseout="modiout()"> Modi </p></div>
+<div id="t" onmouseover="trumpin()" onmouseout="trumpout()"> Trump </div> 
+
+<span id="span2"></span>

@@ -1,0 +1,106 @@
+
+<script>
+    function Display(temp){
+        alert("Hello" + temp);
+    }
+
+    function ChangeColor(c){
+        document.bgColor = c ; 
+    }
+
+
+
+    function Calc(a,b,c){
+        var tot = Number(a) + Number(b) + Number(c) ;
+        var avg = tot/3 ; 
+
+        if ( a>=35 && b>=35 && c>=35){
+            result ="PASS";
+        }
+        else
+            result ="FAIL";
+
+        alert("Total marks is " + tot + ", Average is " + avg + ", Result is " + result);
+    }
+</script>
+
+<input type="text" placeholder="Enter name" id="t1"> 
+<br> 
+<input type="button" value="display" onclick = "Display(t1.value)"> 
+
+
+
+<input type="button" value="RED" onclick = "ChangeColor(this.value)"> 
+<input type="button" value="GREEN" onclick = "ChangeColor(this.value)"> 
+<input type="button" value="BLUE" onclick = "ChangeColor(this.value)"> 
+
+<h1> Sample Mark Test </h1> 
+<form>
+Maths <input type="text" placeholder="Enter Marks" id="m1"> <br>
+Physics <input type="text" placeholder="Enter Marks" id="m2"> <br>
+Chemistry <input type="text" placeholder="Enter Marks" id="m3"> <br> 
+
+<input type="button" value="submit" onclick= 'Calc(m1.value,m2.value,m3.value)'> <br> 
+<input type="reset" value="clear" onclick=''> <br> 
+<input type="button" value="close the tab" onclick='window.close()'>  <br> 
+
+</form>
+
+
+<script>
+    function CalculateGrade() {
+        var sub1 = document.getElementById("mat").value;
+        var sub2 = document.getElementById("phy").value;
+        var sub3 = document.getElementById("che").value;
+    
+        var res, grade;
+    
+        sub1 = Number(sub1);
+        sub2 = Number(sub2);
+        sub3 = Number(sub3);
+    
+        var tot = sub1 + sub2 + sub3;
+        var avg = tot/3;
+    
+        var span1 = document.getElementById("span1");
+        span1.innerHTML = "Total marks: " + tot;
+    
+        if (sub1<35 || sub2<35 || sub3<35){
+            res = "FAIL";
+            grade = "NA";
+        }
+        else {
+            res = "PASS";
+            if (avg > 90)
+                grade = "A";
+            else if (avg > 60)
+                grade = "B";
+            else 
+                grade = "C";
+        }
+        var span3 = document.getElementById("span3");
+        var span4 = document.getElementById("span4");
+        span3.innerHTML = "Result: " + res;
+        span4.innerHTML = "Grade: " + grade;
+    }
+    </script>
+    
+    <table border="1">
+        <tr>
+            <td>Maths: <input type="text" id="mat"></td>
+            <td><span id="span1"></span><br></td>
+        </tr>
+        <tr>
+            <td>Physics: <input type="text" id="phy"></td>
+            <td><span id="span3"></span><br></td>
+        </tr>
+        <tr>
+            <td>Chemistry: <input type="text" id="che"></td>
+            <td><span id="span4"></span><br></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Submit Marks" onclick='CalculateGrade();'></td>
+            <td><input type="reset"></td>
+        </tr>
+    </table>
+

@@ -1,0 +1,35 @@
+JS will not interact with server directly (using node it is possible) 
+JS is not used to create a software application ( using frameworks like Angular we can create) 
+
+Js only for the browser. 
+
+Event is a MEthod which will be invoked upon some action. 
+JS is client side 
+
+onclick = 'alert("Hello");' 
+onload = 'alert("Wow");' 
+
+JS is case sensitive 
+
+DOM (Document Object Model) 
+
+Internal Java Script : 
+	< script language = "javascript">
+		</script> 
+
+1. case sensitive
+2. Statement termination;
+3. Var keyword is used to declare variable 
+
+Window is an object 
+DOM is an object 
+
+<script language="javascript"> 
+	var name = prompt("Enter your name : "); 
+	alert("Hello " + name ) ; 
+</script> 
+
+PascalCase
+
+camelCase 
+
